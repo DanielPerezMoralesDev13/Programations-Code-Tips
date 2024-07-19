@@ -12,6 +12,7 @@
 # Correo electrónico: danielperezdev@proton.me
 
 from typing import Callable, Union
+from sys import stdout
 
 def apply(number: Union[int, float], f: Callable[[Union[int, float]], Union[int, float]]) -> Union[int, float]:
     """
@@ -23,7 +24,7 @@ if __name__ == "__main__":
     """
     funciones anonimas en python solo se pueden de una linea eso tengo entendido no se puede de multiple linea eso tengo entendido
     """
-    print(apply(number = 15, f = lambda num: 2 * num),end="\n")
+    print(apply(number = 15, f = lambda num: 2 * num),end="\n", file = stdout)
 ```
 
 ---
@@ -47,7 +48,7 @@ if __name__ == "__main__":
 ```python
 if __name__ == "__main__":
     # Ejemplo de uso: Aplicar una función lambda que duplica el número 15.
-    print(apply(number=15, f=lambda num: 2 * num), end="\n")
+    print(apply(number=15, f=lambda num: 2 * num), end="\n", file = stdout)
 ```
 
 - *Este ejemplo muestra cómo utilizar una función lambda de una línea como argumento de la función `apply` en Python, aplicando la operación de duplicar el número 15 de manera concisa y directa.*

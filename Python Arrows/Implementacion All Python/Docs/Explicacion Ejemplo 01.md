@@ -11,6 +11,7 @@
 # GitHub: https://github.com/DanielPerezMoralesDev13
 # Correo electrónico: danielperezdev@proton.me
 
+from sys import stdout
 from typing import List, Callable, TypeVar, Union, Any
 
 # Datos de ejemplo
@@ -58,8 +59,8 @@ expensive: List[int] = filter(iterable=prices, func=lambda price: price >= 20)
 total: int = reduce(iterable=expensive, func=lambda acum, price: acum + price, acum=0)
 
 # Imprimir el resultado final
-print(f"Precios caros: {expensive}", end="\n")  # Esto imprimirá: Precios caros: [32, 20]
-print(f"Total: {total}", end="\n")  # Esto imprimirá: Total: 52
+print(f"Precios caros: {expensive}", end="\n", file = stdout)  # Esto imprimirá: Precios caros: [32, 20]
+print(f"Total: {total}", end="\n", file = stdout)  # Esto imprimirá: Total: 52
 ```
 
 ---
@@ -68,12 +69,12 @@ print(f"Total: {total}", end="\n")  # Esto imprimirá: Total: 52
 
 1. **Tipos Genéricos (`TypeVar`):** *Se definen los tipos genéricos `E`, `R` y `A` para permitir flexibilidad en los tipos de datos que pueden ser utilizados en las funciones `map`, `filter` y `reduce`.*
 
-2. **Funciones Genéricas**:
+2. **Funciones Genéricas:**
    - **`map`:** *Aplica una función a cada elemento del iterable y retorna una lista con los resultados.*
    - **`filter`:** *Filtra elementos del iterable según una condición especificada por una función.*
    - **`reduce`:** *Reduce el iterable a un solo valor acumulado utilizando una función de reducción.*
 
-3. **Uso de Funciones Genéricas**:
+3. **Uso de Funciones Genéricas:**
    - **`map`:** *Convierte cada cadena de dólar en un entero eliminando el símbolo de dólar.*
    - **`filter`:** *Filtra los precios convertidos que son mayores o iguales a 20.*
    - **`reduce`:** *Suma los precios filtrados para obtener el total.*

@@ -13,6 +13,7 @@
 # GitHub: https://github.com/DanielPerezMoralesDev13
 # Correo electrónico: danielperezdev@proton.me
 
+from sys import stdout
 from typing import List, Callable, TypeVar, Union, Any, Iterator
 
 # Datos de ejemplo
@@ -57,14 +58,14 @@ prices: Iterator[int] = map(iterable=dollars, func=lambda dollar: int(dollar[0:-
 expensive: Iterator[int] = filter(iterable=prices, func=lambda price: price >= 20)
 
 # Convertir expensive a una lista antes de imprimir
-expensive_list: List[int] = list(expensive)
-print(f"Precios caros: {expensive_list}", end="\n")  # Esto imprimirá: Precios caros: [32, 20]
+expensiveList: List[int] = list(expensive)
+print(f"Precios caros: {expensiveList}", end="\n", file = stdout)  # Esto imprimirá: Precios caros: [32, 20]
 
 # Reducir la lista de precios filtrados sumándolos
-total: int = reduce(iterable=expensive_list, func=lambda acum, price: acum + price, acum=0)
+total: int = reduce(iterable=expensiveList, func=lambda acum, price: acum + price, acum=0)
 
 # Imprimir el resultado final
-print(f"Total: {total}", end="\n")  # Esto imprimirá: Total: 52
+print(f"Total: {total}", end="\n", file = stdout)  # Esto imprimirá: Total: 52
 ```
 
 1. **Tipos Genéricos (`TypeVar`):**

@@ -4,16 +4,17 @@
 # GitHub: https://github.com/DanielPerezMoralesDev13
 # Correo electrónico: danielperezdev@proton.me
 
-from typing import List
+from sys import stdout
+from typing import Iterable, List
 
 # Lista de precios en formato string con el símbolo '$'
 dollars: List[str] = ['32$', '15$', '12$', '17$', '20$']
 
 # Utilizando map con una función lambda para convertir los precios a enteros
 # Esta línea devuelve un generador de tipo <map object at 0x...>
-price_generator = map(lambda dollar: int(dollar[0:-1:1]), dollars)
-print(price_generator, end="\n")  # Esto imprimirá: <map object at 0x...>
+priceGenerator: Iterable[int] = map(lambda dollar: int(dollar[0:-1:1]), dollars)
+print(priceGenerator, end="\n", file = stdout)  # Esto imprimirá: <map object at 0x...>
 
 # Convertir el generador a una lista para obtener los precios como enteros
-prices: List[int] = list(price_generator)
-print(prices, end="\n")  # Esto imprimirá: [32, 15, 12, 17, 20]
+prices: List[int] = list(priceGenerator)
+print(prices, end="\n", file = stdout)  # Esto imprimirá: [32, 15, 12, 17, 20]

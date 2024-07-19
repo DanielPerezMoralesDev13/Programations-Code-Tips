@@ -4,6 +4,7 @@
 # GitHub: https://github.com/DanielPerezMoralesDev13
 # Correo electrónico: danielperezdev@proton.me
 
+from sys import stdout
 from typing import List, Callable
 
 # Lista de precios en formato de cadena con el símbolo de dólar
@@ -65,4 +66,4 @@ expensive: List[int] = filter(iterable=prices, func=lambda price: price >= 20)
 total: int = reduce(iterable=expensive, func=lambda acum, price: acum + price, acum=0)
 
 # Imprimir el resultado final
-print(total, end="\n")  # Esto imprimirá: 52
+print(total, end="\n", file = stdout)  # Esto imprimirá: 52

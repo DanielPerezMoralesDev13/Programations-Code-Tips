@@ -11,12 +11,13 @@
 # GitHub: https://github.com/DanielPerezMoralesDev13
 # Correo electrónico: danielperezdev@proton.me
 
+from sys import stdout
 from typing import List
 
 dollars: List[str] = ['32$', '15$', '12$', '17$', '20$']
 
 # Implementacion de todos
-print(sum(filter(lambda dollar: dollar >= 20, map(lambda dollar: int(dollar[0:-1:1]), dollars))),end="\n")
+print(sum(filter(lambda dollar: dollar >= 20, map(lambda dollar: int(dollar[0:-1:1]), dollars))),end="\n", file = stdout)
 ```
 
 1. **Lista de Precios en Dólares:**
@@ -34,7 +35,7 @@ print(sum(filter(lambda dollar: dollar >= 20, map(lambda dollar: int(dollar[0:-1
    - *`sum(...)`: Utiliza `sum` para sumar todos los precios filtrados que cumplen con la condición especificada por `filter`.*
 
 5. **Impresión del Resultado:**
-   - *`print(..., end="\n")`: Imprime el resultado final. El argumento `end="\n"` asegura que se imprima un salto de línea al finalizar la salida.*
+   - *`print(..., end="\n", file = stdout)`: Imprime el resultado final. El argumento `end="\n"` asegura que se imprima un salto de línea al finalizar la salida.*
 
 **Explicación de la Expresión Completa:**
 

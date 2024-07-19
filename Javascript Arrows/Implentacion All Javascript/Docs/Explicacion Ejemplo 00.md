@@ -36,17 +36,17 @@ console.log(sum); // Output: 52
 
 2. **Bucle `for` Clásico:** *Utilizamos un bucle `for` clásico para iterar sobre cada elemento del array `dollars`.*
 
-3. **Implementación de `map`**:
+3. **Implementación de `map`:**
    - **Objetivo:** *Extraer y convertir los precios de formato string a números.*
    - **Implementación:** *`const price = Number(dollars[index].slice(0, dollars[index].length - 1));`*
    - **Función:** *`Number` convierte el string del precio a un número eliminando el símbolo `$` al final.*
 
-4. **Implementación de `filter`**:
+4. **Implementación de `filter`:**
    - **Objetivo:** *Filtrar los precios que son mayores o iguales a `20`.*
    - **Implementación:** *`if (price >= 20) { ... }`*
    - **Función:** *El `if` verifica si el precio es mayor o igual a `20`.*
 
-5. **Implementación de `reduce`**:
+5. **Implementación de `reduce`:**
    - **Objetivo:** *Sumar todos los precios filtrados que cumplen la condición.*
    - **Implementación:** *`sum += price;`*
    - **Función:** *Acumula el precio al total `sum` si cumple con la condición del filtro.*

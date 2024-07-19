@@ -39,14 +39,14 @@ console.log(updatedPricesSumDiez)
 
 2. **Array `updatedPrices`:** *`updatedPrices` se inicializa como un array vacío donde se almacenarán los objetos `{ price: number, currency: string }` creados en el primer bucle `for`.*
 
-3. **Bucle `for` para `updatedPrices`**:
+3. **Bucle `for` para `updatedPrices`:**
    - *Utilizamos un bucle `for...of` para iterar sobre `prices`.*
    - *Creamos un objeto con la estructura `{ price: iterator, currency: '$' }` para cada elemento de `prices`.*
    - *Agregamos cada objeto creado a `updatedPrices` usando `updatedPrices.push()`.*
 
 4. **Array `updatedPricesSumDiez`:** *`updatedPricesSumDiez` se inicializa como un array vacío donde se almacenarán los objetos `{ price: number, currency: string }` con precios aumentados en 10 unidades, creados en el segundo bucle `for`.*
 
-5. **Bucle `for` para `updatedPricesSumDiez`**:
+5. **Bucle `for` para `updatedPricesSumDiez`:**
    - *Utilizamos otro bucle `for...of` para iterar sobre `prices` nuevamente.*
    - *Aumentamos el valor de cada precio en 10 unidades (`iterator + 10`) dentro de la definición del objeto.*
    - *Creamos un objeto con la estructura `{ price: iterator + 10, currency: '$' }` para cada elemento de `prices` con el precio modificado.*

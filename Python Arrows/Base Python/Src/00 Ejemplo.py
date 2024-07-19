@@ -4,6 +4,7 @@
 # GitHub: https://github.com/DanielPerezMoralesDev13
 # Correo electrónico: danielperezdev@proton.me
 
+from sys import stdout
 from typing import Callable, Union
 
 def apply(number: Union[int, float], f: Callable[[Union[int, float]], Union[int, float]]) -> Union[int, float]:
@@ -33,4 +34,4 @@ def double(number: Union[int, float]) -> Union[int, float]:
 
 if __name__ == "__main__":
     # Ejemplo de uso: Aplicar la función double al número 15.
-    print(apply(number = 15, f = double))
+    print(apply(number = 15, f = double), end="\n", file = stdout)

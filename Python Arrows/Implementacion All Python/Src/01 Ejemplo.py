@@ -4,6 +4,7 @@
 # GitHub: https://github.com/DanielPerezMoralesDev13
 # Correo electrónico: danielperezdev@proton.me
 
+from sys import stdout
 from typing import List, Callable, TypeVar, Union, Any
 
 # Datos de ejemplo
@@ -51,5 +52,5 @@ expensive: List[int] = filter(iterable=prices, func=lambda price: price >= 20)
 total: int = reduce(iterable=expensive, func=lambda acum, price: acum + price, acum=0)
 
 # Imprimir el resultado final
-print(f"Precios caros: {expensive}", end="\n")  # Esto imprimirá: Precios caros: [32, 20]
-print(f"Total: {total}", end="\n")  # Esto imprimirá: Total: 52
+print(f"Precios caros: {expensive}", end="\n", file = stdout)  # Esto imprimirá: Precios caros: [32, 20]
+print(f"Total: {total}", end="\n", file = stdout)  # Esto imprimirá: Total: 52

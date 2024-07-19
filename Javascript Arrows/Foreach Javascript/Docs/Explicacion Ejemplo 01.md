@@ -35,7 +35,7 @@ console.log('Precios mayores o iguales a 20:', expensivePrices)
 
 3. **Método `forEach`:** *`forEach` es utilizado para iterar sobre cada elemento del array `prices`.*
 
-4. **Operaciones dentro de `forEach`**:
+4. **Operaciones dentro de `forEach`:**
    - `sum += price`: Se suma cada `price` al valor actual de `sum`, acumulando así la suma total de todos los precios.
    - `if (price >= 20) { ... }`: Se verifica si el precio actual es mayor o igual a 20. Si lo es, se añade al array `expensivePrices` utilizando `push`.
 

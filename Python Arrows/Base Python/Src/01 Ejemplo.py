@@ -4,7 +4,14 @@
 # GitHub: https://github.com/DanielPerezMoralesDev13
 # Correo electrónico: danielperezdev@proton.me
 
+#!/usr/bin/env python3
+
+# Autor: Daniel Benjamin Perez Morales
+# GitHub: https://github.com/DanielPerezMoralesDev13
+# Correo electrónico: danielperezdev@proton.me
+
 from typing import Callable, Union
+from sys import stdout
 
 def apply(number: Union[int, float], f: Callable[[Union[int, float]], Union[int, float]]) -> Union[int, float]:
     """
@@ -16,4 +23,4 @@ if __name__ == "__main__":
     """
     funciones anonimas en python solo se pueden de una linea eso tengo entendido no se puede de multiple linea eso tengo entendido
     """
-    print(apply(number = 15, f = lambda num: 2 * num),end="\n")
+    print(apply(number = 15, f = lambda num: 2 * num),end="\n", file = stdout)
