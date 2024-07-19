@@ -4,33 +4,33 @@
 # GitHub: https://github.com/DanielPerezMoralesDev13
 # Correo electrónico: danielperezdev@proton.me
 
-from typing import Callable
+from typing import Callable, Union
 
-def apply(number: int | float, f: Callable) -> int | float:
+def apply(number: Union[int, float], f: Callable[[Union[int, float]], Union[int, float]]) -> Union[int, float]:
     """
     Aplica una función dada a un número y devuelve el resultado.
 
     Args:
-        number (int | float): El número al que se aplicará la función.
+        number (Union[int, float]): El número al que se aplicará la función.
         f (Callable): La función que se aplicará al número.
 
     Returns:
-        int | float: El resultado de aplicar la función al número.
+        Union[int, float]: El resultado de aplicar la función al número.
     """
     return f(number)
 
-def double(number: int | float) -> int | float:
+def double(number: Union[int, float]) -> Union[int, float]:
     """
     Duplica un número.
 
     Args:
-        number (int | float): El número a duplicar.
+        number (Union[int, float]): El número a duplicar.
 
     Returns:
-        int | float: El número duplicado.
+        Union[int, float]: El número duplicado.
     """
     return 2 * number
 
 if __name__ == "__main__":
     # Ejemplo de uso: Aplicar la función double al número 15.
-    print(apply(number=15, f=double))
+    print(apply(number = 15, f = double))

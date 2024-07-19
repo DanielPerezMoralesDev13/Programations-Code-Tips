@@ -4,8 +4,9 @@
 # GitHub: https://github.com/DanielPerezMoralesDev13
 # Correo electrónico: danielperezdev@proton.me
 
-from typing import Callable
-def apply(number: int | float, f: Callable) -> int | float:
+from typing import Callable, Union
+
+def apply(number: Union[int, float], f: Callable[[Union[int, float]], Union[int, float]]) -> Union[int, float]:
     """
     Igual en Python3 se le puede pasar una funcion como argumento
     """

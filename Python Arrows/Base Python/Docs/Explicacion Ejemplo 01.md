@@ -11,27 +11,19 @@
 # GitHub: https://github.com/DanielPerezMoralesDev13
 # Correo electrónico: danielperezdev@proton.me
 
-from typing import Callable
+from typing import Callable, Union
 
-def apply(number: int | float, f: Callable) -> int | float:
+def apply(number: Union[int, float], f: Callable[[Union[int, float]], Union[int, float]]) -> Union[int, float]:
     """
-    Aplica una función dada a un número y devuelve el resultado.
-
-    Args:
-        number (int | float): El número al que se aplicará la función.
-        f (Callable): La función que se aplicará al número.
-
-    Returns:
-        int | float: El resultado de aplicar la función al número.
+    Igual en Python3 se le puede pasar una funcion como argumento
     """
     return f(number)
 
 if __name__ == "__main__":
     """
-    Las funciones lambda en Python pueden ser de una línea solamente, no permiten múltiples líneas.
+    funciones anonimas en python solo se pueden de una linea eso tengo entendido no se puede de multiple linea eso tengo entendido
     """
-    # Ejemplo de uso: Aplicar una función lambda que duplica el número 15.
-    print(apply(number=15, f=lambda num: 2 * num), end="\n")
+    print(apply(number = 15, f = lambda num: 2 * num),end="\n")
 ```
 
 ---
