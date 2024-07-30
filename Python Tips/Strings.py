@@ -29,10 +29,10 @@ print(texto, end = "\n", file = stdout)
 # Salida:
 # Columna1    Columna2    Columna3
 
-texto: str = "Ruta del archivo: C:\\\\Archivos\\MiArchivo.txt"
+texto: str = "Ruta del fichero: C:\\\\Ficheros\\MiFichero.txt"
 print(texto, end = "\n", file = stdout)
 # Salida:
-# Ruta del archivo: C:\\Archivos\MiArchivo.txt
+# Ruta del fichero: C:\\Ficheros\MiFichero.txt
 
 texto: str = 'Aquí hay una comilla simple: \'\'.'
 print(texto, end = "\n", file = stdout)

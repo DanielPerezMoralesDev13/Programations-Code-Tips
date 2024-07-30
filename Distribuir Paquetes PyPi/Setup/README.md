@@ -68,14 +68,14 @@ from io import TextIOWrapper
 
 `setuptools` *es una biblioteca que facilita la creación, distribución y gestión de paquetes Python. Importa dos funciones:*
 
-- **`setup()`:** *Esta función es el corazón del archivo `setup.py`. Se usa para definir las metainformaciones y configuraciones del paquete.*
+- **`setup()`:** *Esta función es el corazón del fichero `setup.py`. Se usa para definir las metainformaciones y configuraciones del paquete.*
 - **`find_packages()`:** *Esta función busca y devuelve una lista de paquetes en el proyecto, ayudando a incluir automáticamente todos los paquetes que están en el directorio especificado (generalmente `src`).*
 
 #### ***`from io import TextIOWrapper`***
 
-- *`TextIOWrapper` es una clase del módulo `io` que se usa para manejar archivos de texto. En este contexto, se utiliza para indicar el tipo de la variable `f`, que se usa para leer el archivo `README.md`.*
+- *`TextIOWrapper` es una clase del módulo `io` que se usa para manejar ficheros de texto. En este contexto, se utiliza para indicar el tipo de la variable `f`, que se usa para leer el fichero `README.md`.*
 
-### ***2. **Abrir y Leer el Archivo `README.md`***
+### ***2. **Abrir y Leer el Fichero `README.md`***
 
 ```python
 f: Optional[TextIOWrapper] = None
@@ -90,17 +90,17 @@ with open(file = r"README.md", mode = "r", encoding = "utf-8") as f:
 
 #### ***`with open(file = r"README.md", mode = "r", encoding = "utf-8") as f:`***
 
-*Esta línea abre el archivo `README.md` en modo lectura (`"r"`) con codificación UTF-8. La construcción `with` se usa para garantizar que el archivo se cierre automáticamente después de que el bloque de código se ejecute, incluso si ocurre una excepción.*
+*Esta línea abre el fichero `README.md` en modo lectura (`"r"`) con codificación UTF-8. La construcción `with` se usa para garantizar que el fichero se cierre automáticamente después de que el bloque de código se ejecute, incluso si ocurre una excepción.*
 
-- **`file = r"README.md"`:** *Especifica el nombre del archivo a abrir. El prefijo `r` indica una cadena sin procesar (raw string), que evita problemas con los caracteres de escape en las rutas de archivo en sistemas Windows.*
-- **`mode = "r"`:** *Establece el archivo en modo lectura.*
-- **`encoding = "utf-8"`:** *Define la codificación del archivo como UTF-8.*
+- **`file = r"README.md"`:** *Especifica el nombre del fichero a abrir. El prefijo `r` indica una cadena sin procesar (raw string), que evita problemas con los caracteres de escape en las rutas de fichero en sistemas Windows.*
+- **`mode = "r"`:** *Establece el fichero en modo lectura.*
+- **`encoding = "utf-8"`:** *Define la codificación del fichero como UTF-8.*
 
-*Dentro del bloque `with`, `f` es un objeto de archivo que permite leer el contenido del archivo `README.md`.*
+*Dentro del bloque `with`, `f` es un objeto de fichero que permite leer el contenido del fichero `README.md`.*
 
 #### ***`README: str = f.read()`***
 
-*Lee todo el contenido del archivo `README.md` y lo almacena en la variable `README`, que es de tipo `str` (cadena de texto).*
+*Lee todo el contenido del fichero `README.md` y lo almacena en la variable `README`, que es de tipo `str` (cadena de texto).*
 
 #### ***Parámetros de `setup()`***
 
@@ -157,7 +157,7 @@ setup(
   - *Una breve descripción de lo que hace el paquete. Este es el texto que se muestra en los índices de paquetes y en la documentación.*
 
 - **`long_description`:** *`README`*
-  - *La descripción larga del paquete. En este caso, el contenido del archivo `README.md` se utiliza para proporcionar una descripción detallada del paquete.*
+  - *La descripción larga del paquete. En este caso, el contenido del fichero `README.md` se utiliza para proporcionar una descripción detallada del paquete.*
 
 - **`long_description_content_type`:** *`"text/markdown"`*
   - *El tipo de contenido de la descripción larga. Indica que la descripción larga está en formato Markdown.*
@@ -213,7 +213,7 @@ setup(
     - *Aquí, el paquete requiere `prettytable` versión **3.10.2** o superior*
 
 - **`include_package_data`:** *`True`*
-  - *Un booleano que indica si se deben incluir datos adicionales del paquete (como archivos de datos) que no están especificados en `MANIFEST.in`.*
+  - *Un booleano que indica si se deben incluir datos adicionales del paquete (como ficheros de datos) que no están especificados en `MANIFEST.in`.*
 
 - **`entry_points`:**
 

@@ -47,7 +47,7 @@
 twine upload --repository pypi dist/*
 ```
 
-*En tu archivo de configuración `~/.pypirc`, puedes usar el token en lugar de una contraseña:*
+*En tu fichero de configuración `~/.pypirc`, puedes usar el token en lugar de una contraseña:*
 
 ```ini
 [pypi]
@@ -71,11 +71,11 @@ password = <token>
 
 *Usar tokens de API es una buena práctica para la seguridad y gestión de acceso en la distribución de paquetes de Python.*
 
-## ***Explicación del Archivo `~/.pypirc`***
+## ***Explicación del Fichero `~/.pypirc`***
 
-*El archivo `~/.pypirc` permite que herramientas como `twine` utilicen credenciales y configuraciones para interactuar con repositorios de paquetes. Aquí se especifican dos secciones principales: `pypi` y `testpypi`.*
+*El fichero `~/.pypirc` permite que herramientas como `twine` utilicen credenciales y configuraciones para interactuar con repositorios de paquetes. Aquí se especifican dos secciones principales: `pypi` y `testpypi`.*
 
-### ***Estructura del Archivo***
+### ***Estructura del Fichero***
 
 ```ini
 [distutils]
@@ -123,34 +123,34 @@ password = <token>
 
 - **`[testpypi]`:** *Contiene la configuración para subir paquetes al índice de prueba de TestPyPI. Similar a la sección de `pypi`, pero para el entorno de prueba.*
 
-### ***Dónde Crear el Archivo***
+### ***Dónde Crear el Fichero***
 
-**El archivo `~/.pypirc` debe ser creado en el directorio home del usuario. Esto se hace típicamente mediante:**
+**El fichero `~/.pypirc` debe ser creado en el directorio home del usuario. Esto se hace típicamente mediante:**
 
-1. *Abriendo un editor de texto y creando el archivo `~/.pypirc`.*
+1. *Abriendo un editor de texto y creando el fichero `~/.pypirc`.*
 2. *Insertando la configuración mencionada.*
-3. *Guardando y cerrando el archivo.*
+3. *Guardando y cerrando el fichero.*
 
-### **Ejemplo de Creación del Archivo**
+### **Ejemplo de Creación del Fichero**
 
-**En la terminal, puedes crear el archivo usando un editor de texto como `nano`:**
+**En la terminal, puedes crear el fichero usando un editor de texto como `nano`:**
 
 ```bash
 nano ~/.pypirc
 ```
 
-*Luego, pega el contenido de configuración en el archivo y guarda los cambios. Para salir de `nano`, presiona `Ctrl + X`, luego `Y` para confirmar los cambios, y `Enter` para guardar.*
+*Luego, pega el contenido de configuración en el fichero y guarda los cambios. Para salir de `nano`, presiona `Ctrl + X`, luego `Y` para confirmar los cambios, y `Enter` para guardar.*
 
 ### ***Consideraciones de Seguridad***
 
 - **Tokens en lugar de contraseñas:** *Para mayor seguridad, es recomendable usar tokens de autenticación en lugar de contraseñas en texto claro.*
-- **Permisos del archivo:** *Asegúrate de que el archivo `~/.pypirc` tenga permisos adecuados para proteger tus credenciales. Puedes ajustar los permisos con:*
+- **Permisos del fichero:** *Asegúrate de que el fichero `~/.pypirc` tenga permisos adecuados para proteger tus credenciales. Puedes ajustar los permisos con:*
 
   ```bash
   chmod 600 ~/.pypirc
   ```
 
-  *Esto asegurará que solo tu usuario pueda leer y escribir en el archivo.*
+  *Esto asegurará que solo tu usuario pueda leer y escribir en el fichero.*
 
 **PyPI** *(Python3 Package Index) y **TestPyPI** son servicios utilizados para distribuir y probar paquetes de Python. Aquí está un resumen de cada uno:*
 
@@ -231,7 +231,7 @@ password = <token>
   ```
 
 - **`setuptools`:** *Utilidad para empaquetar proyectos en Python.*
-- **`wheel`:** *Proporciona un formato de archivo de distribución (`.whl`) para los paquetes de Python.*
+- **`wheel`:** *Proporciona un formato de fichero de distribución (`.whl`) para los paquetes de Python.*
 - **`twine`:** *Herramienta para subir paquetes a PyPI o TestPyPI.*
 
 - **Actualizar Herramientas**
@@ -246,16 +246,16 @@ password = <token>
 
 - **Crear Distribuciones**
 
-  *Dentro del directorio raíz de tu proyecto, donde está el archivo `setup.py`, ejecuta:*
+  *Dentro del directorio raíz de tu proyecto, donde está el fichero `setup.py`, ejecuta:*
 
   ```bash
   python3 setup.py sdist bdist_wheel
   ```
 
-- **`sdist`:** *Crea una distribución fuente (archivo `.tar.gz`).*
+- **`sdist`:** *Crea una distribución fuente (fichero `.tar.gz`).*
 - **`bdist_wheel`:** *Crea una distribución en formato wheel (`.whl`).*
 
-  *Esto generará los archivos en el directorio `dist`.*
+  *Esto generará los ficheros en el directorio `dist`.*
 
 - **Instalar el Paquete Localmente para Pruebas**
 
@@ -286,7 +286,7 @@ password = <token>
   ```
 
 - **`--repository pypi`:** *Especifica que se debe usar el repositorio PyPI.*
-- **`dist/*`:** *Subirá todos los archivos en el directorio `dist`.*
+- **`dist/*`:** *Subirá todos los ficheros en el directorio `dist`.*
 - **`--verbose`:** *Proporciona información detallada sobre el proceso de carga.*
 
 - **Subir el Paquete a TestPyPI**
@@ -301,23 +301,23 @@ password = <token>
 
 ### ***Comandos Adicionales***
 
-- **Generar un archivo de distribución**
+- **Generar un fichero de distribución**
 
   ```bash
   python3 setup.py sdist bdist_wheel
   ```
 
-  *Este comando es fundamental para crear los archivos de distribución que se subirán a PyPI o TestPyPI.*
+  *Este comando es fundamental para crear los ficheros de distribución que se subirán a PyPI o TestPyPI.*
 
 - **Verificar el Paquete**
 
-  *Puedes verificar el contenido del archivo `.whl` con `twine`:*
+  *Puedes verificar el contenido del fichero `.whl` con `twine`:*
 
   ```bash
   twine check dist/*
   ```
 
-  - **`check`:** *Verifica que el archivo de distribución cumple con las normas y especificaciones.*
+  - **`check`:** *Verifica que el fichero de distribución cumple con las normas y especificaciones.*
 
 > [!IMPORTANT]
 > *En PyPI, no es posible usar la versión `0.0.0` para un paquete. Según las reglas de versionado y la política de versionado semántico (semver), las versiones deben seguir un formato de `MAJOR.MINOR.PATCH` y `0.0.0` es una versión no válida.*
@@ -443,15 +443,15 @@ description = A description of my package.
 
 *PyPI no ofrece una interfaz directa para eliminar versiones específicas desde la línea de comandos, pero puedes usar `twine` para realizar algunas acciones, aunque para eliminar versiones tendrás que hacerlo desde la interfaz web de PyPI.*
 
-### ***Reutilización del Nombre del Archivo***
+### ***Reutilización del Nombre del Fichero***
 
-- **PyPI tiene una política que evita la reutilización de nombres de archivos para versiones diferentes. Una vez que una versión ha sido subida, no puedes reutilizar el nombre del archivo para una nueva versión. Sin embargo, puedes actualizar la versión del paquete y subir una nueva versión con el mismo nombre de archivo, pero con un número de versión diferente.**
+- **PyPI tiene una política que evita la reutilización de nombres de ficheros para versiones diferentes. Una vez que una versión ha sido subida, no puedes reutilizar el nombre del fichero para una nueva versión. Sin embargo, puedes actualizar la versión del paquete y subir una nueva versión con el mismo nombre de fichero, pero con un número de versión diferente.**
 
 ### ***Importante***
 
 - **No puedes eliminar una versión si tiene dependencias:** *Si otras versiones o paquetes dependen de la versión que deseas eliminar, PyPI podría no permitir la eliminación para evitar romper dependencias.*
 
-- **Política de Nombres de Archivos:** *Recuerda que PyPI no permite la reutilización del nombre del archivo para versiones diferentes. Siempre debes cambiar el número de versión si necesitas subir una nueva versión.*
+- **Política de Nombres de Ficheros:** *Recuerda que PyPI no permite la reutilización del nombre del fichero para versiones diferentes. Siempre debes cambiar el número de versión si necesitas subir una nueva versión.*
 
 *Siguiendo estos pasos podrás eliminar una versión específica de tu paquete y volver a subir una versión corregida o actualizada.*
 
