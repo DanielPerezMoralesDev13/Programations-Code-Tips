@@ -283,13 +283,13 @@ password = <token>
 
 - *El comando `pip cache purge` se usa para limpiar la caché de `pip`. Aquí te explico en detalle qué hace y por qué podría ser útil:*
 
-- **Elimina la Caché de `pip`:** *`pip` almacena en caché paquetes y archivos descargados para mejorar el rendimiento y evitar descargas repetidas. El comando `pip cache purge` elimina todos los archivos en la caché de `pip`.*
+- **Elimina la Caché de `pip`:** *`pip` almacena en caché paquetes y ficheros descargados para mejorar el rendimiento y evitar descargas repetidas. El comando `pip cache purge` elimina todos los ficheros en la caché de `pip`.*
 
 ### ***¿Cuándo Usar `pip cache purge`?***
 
 - **Problemas de Instalación:** *Si experimentas problemas al instalar o actualizar paquetes, como versiones incorrectas, conflictos de dependencias, o si `pip` sigue utilizando una versión antigua de un paquete que ha sido actualizado, limpiar la caché puede ayudar a resolver estos problemas.*
   
-- **Espacio en Disco:** *La caché de `pip` puede ocupar una cantidad considerable de espacio en disco. Si necesitas liberar espacio, puedes usar este comando para eliminar archivos antiguos de la caché.*
+- **Espacio en Disco:** *La caché de `pip` puede ocupar una cantidad considerable de espacio en disco. Si necesitas liberar espacio, puedes usar este comando para eliminar ficheros antiguos de la caché.*
 
 - **Actualización de Paquetes:** *Si has actualizado un paquete y `pip` sigue usando una versión antigua debido a la caché, limpiar la caché asegura que `pip` descargue la versión más reciente disponible.*
 
@@ -301,7 +301,7 @@ password = <token>
 pip cache purge
 ```
 
-**Esto eliminará todos los archivos de la caché de `pip`.**
+**Esto eliminará todos los ficheros de la caché de `pip`.**
 
 ### ***Ejemplo de Uso***
 
@@ -334,7 +334,7 @@ pip cache dir
 
 - **Compatibilidad:** *A partir de `pip 21.3`, el comando `pip cache` está disponible para gestionar la caché. Asegúrate de que estás usando una versión de `pip` que soporte este comando.*
 
-- **Riesgos:** *Limpiar la caché no debería causar problemas en sí mismo, pero puede llevar a una mayor utilización del ancho de banda y tiempo de instalación en la próxima instalación o actualización de paquetes, ya que `pip` tendrá que descargar los archivos nuevamente.*
+- **Riesgos:** *Limpiar la caché no debería causar problemas en sí mismo, pero puede llevar a una mayor utilización del ancho de banda y tiempo de instalación en la próxima instalación o actualización de paquetes, ya que `pip` tendrá que descargar los ficheros nuevamente.*
 
 - *En resumen, `pip cache purge` es una herramienta útil para resolver problemas relacionados con la caché de `pip` y para gestionar el espacio en disco.*
 

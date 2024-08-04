@@ -4,11 +4,11 @@
 
 # ***requirements.txt***
 
-- *En Python3, el archivo `requirements.txt` es un estándar de la comunidad para gestionar las dependencias de un proyecto. Este archivo se utiliza para listar todas las bibliotecas y paquetes que son necesarios para ejecutar el proyecto, junto con sus versiones específicas. A continuación, se detalla la función y uso del archivo `requirements.txt`, así como la sintaxis válida con ejemplos.*
+- *En Python3, el fichero `requirements.txt` es un estándar de la comunidad para gestionar las dependencias de un proyecto. Este fichero se utiliza para listar todas las bibliotecas y paquetes que son necesarios para ejecutar el proyecto, junto con sus versiones específicas. A continuación, se detalla la función y uso del fichero `requirements.txt`, así como la sintaxis válida con ejemplos.*
 
 ## ***¿Qué es `requirements.txt`?***
 
-- *`requirements.txt` es un archivo de texto que contiene una lista de los paquetes de Python que tu proyecto necesita para funcionar correctamente. Este archivo permite que cualquier persona que trabaje en tu proyecto pueda instalar todas las dependencias de manera consistente y sencilla.*
+- *`requirements.txt` es un fichero de texto que contiene una lista de los paquetes de Python que tu proyecto necesita para funcionar correctamente. Este fichero permite que cualquier persona que trabaje en tu proyecto pueda instalar todas las dependencias de manera consistente y sencilla.*
 
 ### ***¿Para qué sirve `requirements.txt`?***
 
@@ -28,7 +28,7 @@
 
 ### ***Sintaxis y Ejemplos***
 
-- *La sintaxis de `requirements.txt` es bastante simple. Cada línea debe contener el nombre del paquete seguido de un símbolo de igualdad (`==`) y la versión específica del paquete. Aquí tienes ejemplos de cómo se puede estructurar un archivo `requirements.txt`:*
+- *La sintaxis de `requirements.txt` es bastante simple. Cada línea debe contener el nombre del paquete seguido de un símbolo de igualdad (`==`) y la versión específica del paquete. Aquí tienes ejemplos de cómo se puede estructurar un fichero `requirements.txt`:*
 
 ```txt
 colored==2.2.4
@@ -46,7 +46,7 @@ toml==0.10.2
 
 - **`prettytable==3.10.2`:** *Instala la versión `3.10.2` del paquete `prettytable`, que se utiliza para generar tablas con formato bonito en texto plano.*
 
-- **`toml==0.10.2`:** *Instala la versión `0.10.2` del paquete `toml`, que es una biblioteca para manejar archivos TOML, un formato de archivo de configuración.*
+- **`toml==0.10.2`:** *Instala la versión `0.10.2` del paquete `toml`, que es una biblioteca para manejar ficheros TOML, un formato de fichero de configuración.*
 
 ### ***Cómo Crear un `requirements.txt`***
 
@@ -54,7 +54,7 @@ toml==0.10.2
 
 1. **Instala las Dependencias:** *Asegúrate de tener todas las bibliotecas necesarias instaladas en tu entorno virtual.*
 
-2. **Genera el Archivo:** *Usa el comando `pip freeze` para generar un archivo `requirements.txt` con todas las dependencias instaladas y sus versiones. Ejecuta:*
+2. **Genera el Archivo:** *Usa el comando `pip freeze` para generar un fichero `requirements.txt` con todas las dependencias instaladas y sus versiones. Ejecuta:*
 
    ```bash
    pip freeze > requirements.txt
@@ -74,7 +74,7 @@ toml==0.10.2
 
 #### ***¿Para qué sirve?***
 
-- **Reproducción del Entorno:** *Permite capturar el estado exacto de las bibliotecas instaladas en el entorno de desarrollo actual. Esta lista puede ser guardada en un archivo `requirements.txt` y utilizada para instalar las mismas versiones de las bibliotecas en otros entornos.*
+- **Reproducción del Entorno:** *Permite capturar el estado exacto de las bibliotecas instaladas en el entorno de desarrollo actual. Esta lista puede ser guardada en un fichero `requirements.txt` y utilizada para instalar las mismas versiones de las bibliotecas en otros entornos.*
 
 - **Mantenimiento de Dependencias:** *Facilita el seguimiento de las versiones de las bibliotecas y la gestión de las dependencias del proyecto. Esto es útil cuando se trabaja en equipo o se despliega una aplicación en producción.*
 
@@ -100,11 +100,11 @@ toml==0.10.2
 
 ### ***2. La Flag `-r`***
 
-- *La flag `-r` en el comando `pip install` se utiliza para especificar que `pip` debe instalar las dependencias a partir de un archivo de requisitos. El archivo debe contener una lista de paquetes y versiones, como un archivo `requirements.txt`.*
+- *La flag `-r` en el comando `pip install` se utiliza para especificar que `pip` debe instalar las dependencias a partir de un fichero de requisitos. El fichero debe contener una lista de paquetes y versiones, como un fichero `requirements.txt`.*
 
 #### ***¿Qué Significa?***
 
-- **`-r` o `--requirement`:** *Esta flag le indica a `pip` que lea el archivo proporcionado y procese las dependencias listadas en él. `pip` instalará todas las bibliotecas y versiones especificadas en ese archivo.*
+- **`-r` o `--requirement`:** *Esta flag le indica a `pip` que lea el fichero proporcionado y procese las dependencias listadas en él. `pip` instalará todas las bibliotecas y versiones especificadas en ese fichero.*
 
 #### ***Ejemplo de Uso:***
 
@@ -114,14 +114,14 @@ toml==0.10.2
 pip install -r requirements.txt
 ```
 
-- *Esto hace que `pip` lea el archivo `requirements.txt`, que contiene una lista de bibliotecas y versiones, e instale esas dependencias en el entorno actual. Este comando es muy útil para configurar un entorno de desarrollo de manera rápida y consistente a partir de un archivo de requisitos previamente creado.*
+- *Esto hace que `pip` lea el fichero `requirements.txt`, que contiene una lista de bibliotecas y versiones, e instale esas dependencias en el entorno actual. Este comando es muy útil para configurar un entorno de desarrollo de manera rápida y consistente a partir de un fichero de requisitos previamente creado.*
 
 ### ***Resumen***
 
 - **`pip freeze`:** *Genera una lista de todas las bibliotecas instaladas en el entorno actual junto con sus versiones exactas, útil para capturar el estado del entorno.*
 
-- **`-r`:** *Es una flag utilizada con `pip install` para instalar todas las dependencias listadas en un archivo de requisitos, facilitando la configuración de entornos reproducibles.*
+- **`-r`:** *Es una flag utilizada con `pip install` para instalar todas las dependencias listadas en un fichero de requisitos, facilitando la configuración de entornos reproducibles.*
 
 ### ***Conclusión***
 
-- *El archivo `requirements.txt` es una herramienta esencial para la gestión de dependencias en proyectos Python. Proporciona una forma estandarizada de definir las bibliotecas necesarias, garantiza la reproducibilidad del entorno de desarrollo y facilita el despliegue y mantenimiento de aplicaciones. La sintaxis es sencilla pero efectiva, y su uso correcto es clave para un flujo de trabajo de desarrollo eficiente y consistente.*
+- *El fichero `requirements.txt` es una herramienta esencial para la gestión de dependencias en proyectos Python. Proporciona una forma estandarizada de definir las bibliotecas necesarias, garantiza la reproducibilidad del entorno de desarrollo y facilita el despliegue y mantenimiento de aplicaciones. La sintaxis es sencilla pero efectiva, y su uso correcto es clave para un flujo de trabajo de desarrollo eficiente y consistente.*
