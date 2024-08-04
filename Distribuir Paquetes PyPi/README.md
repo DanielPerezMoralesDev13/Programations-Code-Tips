@@ -1,3 +1,7 @@
+<!-- Author: Daniel Benjamin Perez Morales -->
+<!-- GitHub: https://github.com/DanielPerezMoralesDev13 -->
+<!-- Email: danielperezdev@proton.me -->
+
 # ***Para distribuir un paquete de Python, necesitarás preparar y subir tu paquete a un repositorio de Python, como PyPI (Python3 Package Index) o TestPyPI (un índice de paquetes de prueba). Aquí tienes una guía detallada sobre los pasos y comandos involucrados***
 
 ## ***[https://pypi.org/manage/account/token/](https://pypi.org/manage/account/token/ "https://pypi.org/manage/account/token/")***
@@ -274,6 +278,65 @@ password = <token>
   ```bash
   pip uninstall pycrypy
   ```
+
+### ***¿Qué Hace `pip cache purge`?***
+
+- *El comando `pip cache purge` se usa para limpiar la caché de `pip`. Aquí te explico en detalle qué hace y por qué podría ser útil:*
+
+- **Elimina la Caché de `pip`:** *`pip` almacena en caché paquetes y archivos descargados para mejorar el rendimiento y evitar descargas repetidas. El comando `pip cache purge` elimina todos los archivos en la caché de `pip`.*
+
+### ***¿Cuándo Usar `pip cache purge`?***
+
+- **Problemas de Instalación:** *Si experimentas problemas al instalar o actualizar paquetes, como versiones incorrectas, conflictos de dependencias, o si `pip` sigue utilizando una versión antigua de un paquete que ha sido actualizado, limpiar la caché puede ayudar a resolver estos problemas.*
+  
+- **Espacio en Disco:** *La caché de `pip` puede ocupar una cantidad considerable de espacio en disco. Si necesitas liberar espacio, puedes usar este comando para eliminar archivos antiguos de la caché.*
+
+- **Actualización de Paquetes:** *Si has actualizado un paquete y `pip` sigue usando una versión antigua debido a la caché, limpiar la caché asegura que `pip` descargue la versión más reciente disponible.*
+
+### ***Comando `pip cache purge`***
+
+**Para usar este comando, simplemente ejecuta:**
+
+```bash
+pip cache purge
+```
+
+**Esto eliminará todos los archivos de la caché de `pip`.**
+
+### ***Ejemplo de Uso***
+
+1. **Instalación de Paquete con Problemas:**
+   - *Si `pip` tiene problemas para instalar un paquete y muestra errores relacionados con la caché,   puedes intentar limpiar la caché y volver a intentar la instalación.*
+
+   ```bash
+   pip cache purge
+   pip install nombre-del-paquete
+   ```
+
+2. **Liberar Espacio:**
+   - *Si necesitas liberar espacio en tu sistema, puedes limpiar la caché.*
+
+   ```bash
+   pip cache purge
+   ```
+
+### ***Verificación de Caché***
+
+- *Para verificar el contenido de la caché antes de limpiarla, puedes usar el siguiente comando para ver dónde está ubicada:*
+
+```bash
+pip cache dir
+```
+
+**Este comando muestra el directorio donde `pip` guarda la caché.**
+
+### ***Notas Adicionales***
+
+- **Compatibilidad:** *A partir de `pip 21.3`, el comando `pip cache` está disponible para gestionar la caché. Asegúrate de que estás usando una versión de `pip` que soporte este comando.*
+
+- **Riesgos:** *Limpiar la caché no debería causar problemas en sí mismo, pero puede llevar a una mayor utilización del ancho de banda y tiempo de instalación en la próxima instalación o actualización de paquetes, ya que `pip` tendrá que descargar los archivos nuevamente.*
+
+- *En resumen, `pip cache purge` es una herramienta útil para resolver problemas relacionados con la caché de `pip` y para gestionar el espacio en disco.*
 
 ### ***Subir el Paquete***
 
