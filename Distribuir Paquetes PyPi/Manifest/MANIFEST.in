@@ -2,33 +2,43 @@
 # GitHub: https://github.com/DanielPerezMoralesDev13
 # Email: danielperezdev@proton.me
 
-# Incluir el fichero de documentación principal
-include README.md
+# Incluir los fichero de documentación principal.
+include ./README.*
 
-# Incluir todos los ficheros de datos en el directorio 'src'
-recursive-include src *
-recursive-include dist *
+# Incluir el fichero de licencia del proyecto.
+include ./LICENSE*
 
+# Incluir los siguientes documentos relacionados con la conducta y seguridad.
+include ./CODE_OF_CONDUCT.md
+include ./CODIGO_CONDUCTA.md
+include ./SECURITY.*
+include ./pycrypy.spec
 
-# Excluir los ficheros del directorio 'Docs'
-recursive-exclude Docs *
+# Incluir los requisitos del proyecto para la instalación de dependencias.
+include ./requirements.txt
 
-# Excluir todos los directorios '.mypy_cache' en cualquier nivel del árbol de directorios
+# Incluir el archivo de contribución para guiar a los colaboradores.
+include ./CONTRIBUCION.md
+
+# Incluir todos los archivos de datos en los directorios 'src' y 'dist'.
+recursive-include ./src *
+recursive-include ./dist *
+
+# Excluir todos los directorios '.mypy_cache' en cualquier nivel del árbol de directorios.
 global-exclude */.mypy_cache *
+
+# Excluir todos los directorios '__pycache__' en cualquier nivel del árbol de directorios.
 global-exclude */__pycache__ *
 
-# Excluir los ficheros del directorio '.git'
-recursive-exclude .git *
+# Excluir los archivos del directorio '.git' para evitar incluir información de control de versiones.
+recursive-exclude ./.git *
 
-# Excluir los ficheros del directorio 'Themes'
-recursive-exclude Themes *
+# Excluir todos los archivos en el directorio 'Themes' para mantener el foco en los archivos relevantes.
+recursive-exclude ./Themes *
 
-# Excluir los siguientes ficheros
-exclude CODE_OF_CONDUCT.md
-exclude CODIGO_CONDUCTA.md
-exclude SECURITY.*
-exclude pycrypy.spec
-exclude .gitignore
-exclude .gitattributes
-exclude .editorconfig
-exclude requirements.txt
+# Excluir los siguientes archivos de configuración y control.
+exclude ./.gitignore
+exclude ./.gitattributes
+exclude ./.editorconfig
+exclude ./*.asc
+

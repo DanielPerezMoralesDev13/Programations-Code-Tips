@@ -19,46 +19,46 @@
 - **`include`:** *Incluye Ficheros específicos en la distribución.*
 
   ```plaintext
-  include README.md
-  include setup.cfg
+  include ./README.*
+  include ./setup.cfg
   ```
 
 - **`exclude`:** *Excluye Ficheros específicos de la distribución.*
 
   ```plaintext
-  exclude *.pyc
+  exclude ./*.pyc
   ```
 
 - **`recursive-include`:** *Incluye todos los Ficheros en un directorio específico, incluyendo subdirectorios.*
   - **Exclusiones específicas:** *Al usar recursive-exclude, se deben proporcionar tanto el directorio como un patrón de fichero (puede ser * para todos los ficheros).*
 
   ```plaintext
-  recursive-include my_package *.txt
+  recursive-include my_package ./*.txt
   ```
 
 - **`recursive-exclude`:** *Excluye todos los Ficheros en un directorio específico, incluyendo subdirectorios.*
   - **Exclusiones específicas:** *Al usar recursive-exclude, se deben proporcionar tanto el directorio como un patrón de fichero (puede ser * para todos los ficheros).*
 
   ```plaintext
-  recursive-exclude my_package *.pyc
+  recursive-exclude my_package ./*.pyc
   ```
 
 - **`global-include`:** *Incluye todos los Ficheros que coincidan con el patrón especificado en todos los directorios.*
 
   ```plaintext
-  global-include *.txt
+  global-include ./*.txt
   ```
 
 - **`global-exclude`:** *Excluye todos los Ficheros que coincidan con el patrón especificado en todos los directorios.*
 
   ```plaintext
-  global-exclude *.pyc
+  global-exclude ./*.pyc
   ```
 
 - **`prune`:** *Excluye directorios enteros de la distribución.*
 
   ```plaintext
-  prune tests
+  prune ./tests
   ```
 
 ### ***Ejemplo de `MANIFEST.in`***
@@ -66,19 +66,19 @@
 **Aquí hay un ejemplo de un Fichero `MANIFEST.in`:**
 
 ```plaintext
-include README.md
-include LICENSE
-recursive-include my_package/data *
-exclude my_package/data/temp*
-prune my_package/tests
+include ./README.*
+include ./LICENSE.*
+recursive-include ./my_package/data *
+exclude ./my_package/data/temp*
+prune ./my_package/tests
 ```
 
 **En este ejemplo:**
 
-- *Se incluyen `README.md` y `LICENSE` en el paquete distribuible.*
-- *Se incluyen todos los Ficheros en el directorio `my_package/data`.*
-- *Se excluyen los Ficheros en `my_package/data` que comienzan con `temp`.*
-- *Se excluye el directorio `my_package/tests` y todo su contenido.*
+- *Se incluyen `./README.*` y `./LICENSE.*` en el paquete distribuible.*
+- *Se incluyen todos los Ficheros en el directorio `./my_package/data`.*
+- *Se excluyen los Ficheros en `./my_package/data` que comienzan con `./temp`.*
+- *Se excluye el directorio `./my_package/tests` y todo su contenido.*
 
 ### ***En el fichero `MANIFEST.in`, los comentarios se realizan utilizando el símbolo `#`. Todo el texto que sigue a `#` en una línea es considerado un comentario y será ignorado por el procesador del Fichero. Los comentarios son útiles para añadir descripciones o anotaciones sobre las inclusiones y exclusiones que estás configurando.***
 
@@ -88,19 +88,19 @@ prune my_package/tests
 
 ```plaintext
 # Incluir el Fichero de documentación principal
-include README.md
+include ./README.*
 
 # Incluir la licencia del proyecto
-include LICENSE
+include ./LICENSE.*
 
 # Incluir todos los Ficheros de datos en el directorio 'data'
-recursive-include my_package/data *
+recursive-include ./my_package/data *
 
 # Excluir los Ficheros temporales del directorio 'data'
-exclude my_package/data/temp*
+exclude ./my_package/data/temp*
 
 # Excluir el directorio de pruebas
-prune my_package/tests
+prune ./my_package/tests
 ```
 
 ### ***Uso de Comentarios***
@@ -110,7 +110,7 @@ prune my_package/tests
 
    ```plaintext
    # Incluir Ficheros de configuración
-   include *.cfg
+   include ./*.cfg
    ```
 
 2. **Notas sobre Excepciones:**
@@ -118,7 +118,7 @@ prune my_package/tests
 
    ```plaintext
    # Excluir Ficheros temporales que podrían ser generados por el editor
-   exclude *.tmp
+   exclude ./*.tmp
    ```
 
 3. **Desactivación Temporal de Líneas:**
@@ -126,11 +126,11 @@ prune my_package/tests
 
    ```plaintext
    # Incluye ejemplos de scripts, pero está comentado temporalmente
-   # recursive-include examples *.py
+   # recursive-include ./examples *.py
    ```
 
 *Recuerda que los comentarios no afectan la funcionalidad del Fichero `MANIFEST.in` y solo sirven para documentación y organización dentro del Fichero mismo.*
 
 ### ***Uso***
 
-*Cuando se ejecuta un comando como `python setup.py sdist`, el contenido del `MANIFEST.in` es utilizado para construir el paquete distribuible (tarball o zip), asegurando que todos los Ficheros necesarios estén incluidos y que los Ficheros no deseados sean excluidos.*
+*Cuando se ejecuta un comando como `python setup.py sdist` o `python ./setup.py sdist`, el contenido del `MANIFEST.in` es utilizado para construir el paquete distribuible (tarball o zip), asegurando que todos los Ficheros necesarios estén incluidos y que los Ficheros no deseados sean excluidos.*
