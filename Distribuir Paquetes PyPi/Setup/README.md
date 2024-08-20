@@ -75,7 +75,7 @@ from io import TextIOWrapper
 
 - *`TextIOWrapper` es una clase del módulo `io` que se usa para manejar ficheros de texto. En este contexto, se utiliza para indicar el tipo de la variable `f`, que se usa para leer el fichero `README.md`.*
 
-### ***2. **Abrir y Leer el Fichero `README.md`***
+### ***2. Abrir y Leer el Fichero `README.md`***
 
 ```python
 f: Optional[TextIOWrapper] = None
