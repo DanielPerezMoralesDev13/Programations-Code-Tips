@@ -383,26 +383,26 @@ pip cache dir
   - **`check`:** *Verifica que el fichero de distribución cumple con las normas y especificaciones.*
 
 > [!IMPORTANT]
-> *En PyPI, no es posible usar la versión `0.0.0` para un paquete. Según las reglas de versionado y la política de versionado semántico (semver), las versiones deben seguir un formato de `MAJOR.MINOR.PATCH` y `0.0.0` es una versión no válida.*
+> *En PyPI, sí es posible usar la versión `0.0.0` para un paquete, aunque no es común. Según la política de versionado semántico (semver), las versiones deben seguir el formato `MAJOR.MINOR.PATCH`. La versión `0.0.0` se puede utilizar, pero generalmente se recomienda usar versiones mayores que `0.0.0` para indicar que el paquete está más desarrollado y es más estable.*
 
 **Aquí está la razón:**
 
-### ***Razones por las que `0.0.0` no es válida***
+### ***Razones por las que `0.0.0` puede no ser ideal***
 
-1. **Versionado Semántico:** *El versionado semántico establece que la versión mínima para una versión de liberación debe ser `1.0.0`. Las versiones anteriores a `1.0.0` se utilizan para la fase de desarrollo y pre-liberación, y deben seguir un formato que refleje esa etapa, como `0.1.0`, `0.2.0`, etc.*
+1. **Versionado Semántico:** *El versionado semántico establece que las versiones menores de `1.0.0`, como `0.x.y`, son adecuadas para fases de desarrollo y pre-liberación. Aunque `0.0.0` es técnicamente una versión válida, es común usar versiones como `0.1.0` o `0.2.0` para reflejar de manera más precisa el estado del desarrollo.*
 
-2. **Restricciones de PyPI:** *PyPI no acepta versiones `0.0.0`. Si intentas subir un paquete con esta versión, PyPI te dará un error de validación.*
+2. **Restricciones de PyPI:** *Aunque PyPI permite la versión `0.0.0`, es poco común y puede causar confusión. Generalmente, es recomendable utilizar versiones más significativas para los paquetes publicados.*
 
-### **Versiones Alternativas para Desarrollo**
+### ***Versiones Alternativas para Desarrollo***
 
 - **`0.1.0` o `0.0.1`:** *Para paquetes en desarrollo o en etapas iniciales, utiliza versiones como `0.1.0` o `0.0.1` para indicar que es una versión temprana o en desarrollo.*
 
 - **`dev`, `alpha`, `beta`, `rc`:** *Puedes usar etiquetas como `dev`, `alpha`, `beta`, y `rc` para indicar que la versión es una versión de desarrollo o una versión candidata:*
 
-  - *`0.1.0.dev1`*
-  - *`0.1.0a1` (alpha)*
-  - *`0.1.0b1` (beta)*
-  - *`0.1.0rc1` (release candidate)*
+  - *`0.1.0.dev1` - `0.1.0-dev1` - `0.1.0.developement1` - `0.1.0 - developement1` (developement)*
+  - *`0.1.0a1` - `0.1.0-a1` - `0.1.0alpha1` - `0.1.0-alpha1` (alpha)*
+  - *`0.1.0b1` - `0.1.0-b1` - `0.1.0beta1` - `0.1.0-beta1` (beta)*
+  - *`0.1.0rc1` - `0.1.0-rc1` - `0.1.0releasecandidate` - `0.1.0-releasecandidate` (release candidate)*
 
 > [!NOTE]
 > *En el desarrollo de software, especialmente en el contexto de librerías y paquetes de Python, el uso de diferentes versiones ayuda a comunicar el estado y la estabilidad del software a los usuarios y desarrolladores. Las versiones `0.1.0.dev1`, `0.1.0a1`, `0.1.0b1`, y `0.1.0rc1` siguen las prácticas de **versionado semántico** y **versionado de pre-liberación** para indicar el progreso del desarrollo del software. Aquí te explico cada uno de estos:*
@@ -463,9 +463,10 @@ pip cache dir
 
 ### ***Conclusión***
 
-*Estas versiones de pre-liberación permiten a los desarrolladores gestionar el ciclo de vida del software, obteniendo retroalimentación, identificando y corrigiendo errores, y asegurando que la versión final sea lo más estable y confiable posible. Al seguir estos patrones de versionado, puedes comunicar claramente el estado de tu software y facilitar un proceso de desarrollo más organizado.*
+> [!IMPORTANT]
+> *Estas versiones de pre-liberación permiten a los desarrolladores gestionar el ciclo de vida del software, obteniendo retroalimentación, identificando y corrigiendo errores, y asegurando que la versión final sea lo más estable y confiable posible. Al seguir estos patrones de versionado, puedes comunicar claramente el estado de tu software y facilitar un proceso de desarrollo más organizado.*
 
-### ***Ejemplo de Versión Correcta***
+### ***Ejemplo de Versión Recomendado***
 
 **En lugar de `0.0.0`, usa una versión como `0.1.0` para una versión inicial de desarrollo:**
 
