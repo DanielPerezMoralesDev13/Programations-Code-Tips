@@ -39,7 +39,7 @@ setup(
     keywords = "alacritty",
     python_requires = ">=3.6",
     install_requires = [
-        "pytoml >= 0.1.21",
+        "toml >= 0.10.2",
         "colored >= 2.2.4",
         "mypy >= 1.10.0",
         "pyinstaller >= 6.6.0",
@@ -126,7 +126,7 @@ setup(
     keywords = "alacritty",
     python_requires = ">=3.6",
     install_requires = [
-        "pytoml >= 0.1.21",
+        "toml >= 0.10.2",
         "colored >= 2.2.4",
         "mypy >= 1.10.0",
         "pyinstaller >= 6.6.0",
@@ -197,7 +197,7 @@ setup(
 
   ```python
   [
-    "pytoml >= 0.1.21",
+    "toml >= 0.10.2",
     "colored >= 2.2.4",
     "mypy >= 1.10.0",
     "pyinstaller >= 6.6.0",
@@ -206,7 +206,7 @@ setup(
   ```
 
   - *Una lista de dependencias que se instalarán automáticamente cuando se instale el paquete.*
-    - *Aquí, el paquete requiere `pytoml` versión **0.1.21** o superior*
+    - *Aquí, el paquete requiere `toml` versión **0.10.2** o superior*
     - *Aquí, el paquete requiere `colored` versión **2.2.4** o superior*
     - *Aquí, el paquete requiere `mypy` versión **1.10.0** o superior*
     - *Aquí, el paquete requiere `pyinstaller` versión **6.6.0** o superior*
